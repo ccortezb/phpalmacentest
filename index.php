@@ -67,7 +67,7 @@ include_once("config.php");
  
 //fetching data in descending order (lastest entry first)
 //$result = mysql_query("SELECT * FROM users ORDER BY id DESC"); // mysql_query is deprecated
-$result = mysqli_query($mysqli, "SELECT * FROM users ORDER BY id DESC"); // using mysqli_query instead
+$result = mysqli_query($mysqli, "SELECT * FROM Personal ORDER BY idPersonal DESC"); // using mysqli_query instead
 ?>
  
 <html>
@@ -77,22 +77,29 @@ $result = mysqli_query($mysqli, "SELECT * FROM users ORDER BY id DESC"); // usin
  
 <body>
     <a href="agregar_personal.html">Agregar nuevo personal aquí.</a><br/><br/>
- 
+    <h4>Personal Contratado: </h4>
     <table width='80%' border=0>
         <tr bgcolor='#CCCCCC'>
-            <td>Name</td>
-            <td>Age</td>
-            <td>Email</td>
-            <td>Update</td>
+            <td>idPersonal</td>
+            <td>dni</td>
+            <td>Nomb</td>
+            <td>Direc</td>
+            <td>Telef</td>
+            <td>Edad</td>
+            <td>Cargo_emp</td>
         </tr>
         <?php 
         //while($res = mysql_fetch_array($result)) { // mysql_fetch_array is deprecated, we need to use mysqli_fetch_array 
         while($res = mysqli_fetch_array($result)) {         
             echo "<tr>";
-            echo "<td>".$res['name']."</td>";
-            echo "<td>".$res['age']."</td>";
-            echo "<td>".$res['email']."</td>";    
-            echo "<td><a href=\"edit.php?id=$res[id]\">Edit</a> | <a href=\"delete.php?id=$res[id]\" onClick=\"return confirm('Are you sure you want to delete?')\">Delete</a></td>";        
+            echo "<td>".$res['idPersonal']."</td>";
+            echo "<td>".$res['dni']."</td>";
+            echo "<td>".$res['Nomb']."</td>";
+            echo "<td>".$res['Direc']."</td>";
+            echo "<td>".$res['Telef']."</td>";
+            echo "<td>".$res['Edad']."</td>"; 
+            echo "<td>".$res['Cargo_emp']."</td>";   
+            echo "<td><a href=\"editar_personal.php?id=$res[idPersonal]\">Editar</a> | <a href=\"eliminar_personal.php?id=$res[idPersonal]\" onClick=\"return confirm('Seguro que desea eliminarlo?')\">Eliminar</a></td>";        
         }
         ?>
     </table>
