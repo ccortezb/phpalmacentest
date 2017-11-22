@@ -141,10 +141,6 @@ while($res = mysqli_fetch_array($result))
     <form name="form1" method="post" action="editar_personal.php">
             <table width="25%" border="0">
             <tr>
-                <td>ID Personal</td>
-                <td><input type="text" name="idPersonal" value="<?php echo $idPersonal;?>"</td>
-            </tr>
-            <tr>
                 <td>dni</td>
                 <td><input type="text" name="dni" value="<?php echo $dni;?>"</td>
             </tr>
