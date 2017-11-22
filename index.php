@@ -87,6 +87,7 @@ $result = mysqli_query($mysqli, "SELECT * FROM Personal ORDER BY idPersonal DESC
             <td>Telef</td>
             <td>Edad</td>
             <td>Cargo_emp</td>
+            <td>Mantenimiento</td>
         </tr>
         <?php 
         //while($res = mysql_fetch_array($result)) { // mysql_fetch_array is deprecated, we need to use mysqli_fetch_array 
