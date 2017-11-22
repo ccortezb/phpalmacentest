@@ -117,7 +117,7 @@ $idPersonal = $_GET['idPersonal'];
 
 echo($idPersonal);
 //selecting data associated with this particular id
-$result = mysqli_query($mysqli, "SELECT * FROM Personal WHERE idPersonal=$idPersonal");
+$result = mysqli_query($mysqli, "SELECT idPersonal FROM Personal WHERE idPersonal=$idPersonal");
 
 while($res = mysqli_fetch_array($result))
 {
