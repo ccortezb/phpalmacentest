@@ -100,7 +100,7 @@ $result = mysqli_query($mysqli, "SELECT * FROM Personal ORDER BY idPersonal DESC
             echo "<td>".$res['Telef']."</td>";
             echo "<td>".$res['Edad']."</td>"; 
             echo "<td>".$res['Cargo_emp']."</td>";   
-            echo "<td><a href=\"editar_personal.php?id=$res[idPersonal]\">Editar</a> | <a href=\"eliminar_personal.php?id=$res[idPersonal]\" onClick=\"return confirm('Seguro que desea eliminarlo?')\">Eliminar</a></td>";        
+            echo "<td><a href=\"editar_personal.php?idPersonal=$res[idPersonal]\">Editar</a> | <a href=\"eliminar_personal.php?idPersonal=$res[idPersonal]\" onClick=\"return confirm('Seguro que desea eliminarlo?')\">Eliminar</a></td>";        
         }
         ?>
     </table>
