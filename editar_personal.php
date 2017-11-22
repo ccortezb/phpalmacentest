@@ -114,6 +114,7 @@ if(isset($_POST['update']))
 <?php
 //getting id from url
 $idPersonal = $_GET['idPersonal'];
+include("config.php");
  
 //selecting data associated with this particular id
 $result = mysqli_query($mysqli, "SELECT * FROM Personal WHERE idPersonal=$idPersonal");
