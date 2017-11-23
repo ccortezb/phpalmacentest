@@ -83,7 +83,7 @@ if(isset($_POST['updatestock']))
         
     } else {    
         //updating the table
-        $result = mysqli_query($mysqli, "update Producto_Almacen  set Stock_asignado=$Stock_asignado where idProducto=2");
+        $result = mysqli_query($mysqli, "update Producto_Almacen  set Stock_asignado=$stock where idProducto=2");
         
         //redirectig to the display page. In our case, it is index.php
         header("Location: index.php");
