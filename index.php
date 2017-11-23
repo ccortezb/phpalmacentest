@@ -118,7 +118,7 @@ $resultStock = mysqli_query($mysqli, "select p.idProducto, p.nom_prod, pa.Stock,
         </tr>
         <?php 
         //while($res = mysql_fetch_array($result)) { // mysql_fetch_array is deprecated, we need to use mysqli_fetch_array 
-        while($res = mysqli_fetch_array($result)) {         
+        while($res = mysqli_fetch_array($resultStock)) {         
             echo "<tr>";
             echo "<td>".$res['idProducto']."</td>";
             echo "<td>".$res['nom_prod']."</td>";
