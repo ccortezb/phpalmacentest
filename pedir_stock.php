@@ -69,29 +69,21 @@ if(isset($_POST['updatestock']))
 {    
     $idProducto = $_POST['idProducto'];
     $nom_prod = $_POST['nom_prod'];
-    $Stock = $_POST['stock'];
+    $stock = $_POST['stock'];
     $Stock_asignado = $_POST['Stock_asignado'];
     
     // checking empty fields
-    if(empty($idProducto) || empty($nom_prod) || empty($Stock) || empty($Stock_asignado)) {                
-        if(empty($idProducto)) {
-            echo "<font color='red'>el idProducto esta vacio.</font><br/>";
-        }
+    if(empty($stock)) {                
+
         
-        if(empty($nom_prod)) {
-            echo "<font color='red'>el nom_prod esta vacio.</font><br/>";
+        if(empty($stock)) {
+            echo "<font color='red'>el stock esta vacio.</font><br/>";
         }
-        
-        if(empty($Stock)) {
-            echo "<font color='red'>el Stock esta vacio.</font><br/>";
-        }
-        if(empty($Stock_asignado)) {
-            echo "<font color='red'>el Stock_asignado esta vacio.</font><br/>";
-        }     
+           
         
     } else {    
         //updating the table
-        $result = mysqli_query($mysqli, "update Producto_Almacen  set Stock_asignado=$Stock_asignado where idProducto=$idProducto");
+        $result = mysqli_query($mysqli, "update Producto_Almacen  set Stock_asignado=$Stock_asignado where idProducto=2");
         
         //redirectig to the display page. In our case, it is index.php
         header("Location: index.php");
