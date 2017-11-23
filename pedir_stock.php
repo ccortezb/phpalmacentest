@@ -69,7 +69,7 @@ if(isset($_POST['updatestock']))
 {    
     $idProducto = $_POST['idProducto'];
     $nom_prod = $_POST['nom_prod'];
-    $Stock = $_POST['Stock'];
+    $Stock = $_POST['stock'];
     $Stock_asignado = $_POST['Stock_asignado'];
     
     // checking empty fields
