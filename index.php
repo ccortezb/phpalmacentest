@@ -125,7 +125,7 @@ $resultStock = mysqli_query($mysqli, "select p.idProducto, p.nom_prod, pa.Stock,
             echo "<td>".$res['Stock']."</td>";
             echo "<td>".$res['Stock_asignado']."</td>";
   
-            echo "<td><a href=\"pedir_stock.php?idProducto=$res[idProducto]\">Pedir Stock</a> | <a href=\"actualizar_stock.php?idProducto=$res[idProducto]\">Eliminar</a></td>";        
+            echo "<td><a href=\"pedir_stock.php?idProducto=$res[idProducto]\">Pedir Stock</a> | <a href=\"actualizar_stock.php?idProducto=$res[idProducto]\">Actulizar Stock</a></td>";        
         }
         ?>
     </table>
