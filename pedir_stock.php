@@ -73,8 +73,10 @@ if(isset($_POST['updatestock']))
     $Stock_asignado = $_POST['Stock_asignado'];
     
     // checking empty fields
-    if(empty($stock)) {                
-
+    if(empty($stock) || empty($idProducto) ) {                
+        if(empty($idProducto)) {
+            echo "<font color='red'>el idProducto esta vacio.</font><br/>";
+        }
         
         if(empty($stock)) {
             echo "<font color='red'>el stock esta vacio.</font><br/>";
@@ -83,7 +85,7 @@ if(isset($_POST['updatestock']))
         
     } else {    
         //updating the table
-        $result = mysqli_query($mysqli, "update Producto_Almacen  set Stock_asignado=$stock where idProducto=2");
+        $result = mysqli_query($mysqli, "update Producto_Almacen  set Stock_asignado=$stock where idProducto=$idProducto");
         
         //redirectig to the display page. In our case, it is index.php
         header("Location: index.php");
@@ -92,8 +94,12 @@ if(isset($_POST['updatestock']))
 ?>
     <form action="pedir_stock.php" method="post" name="formpedirstock">
         <table width="25%" border="0">
+             <tr>
+                <td>idProducto</td>
+                <td><input type="number" name="idProducto"></td>
+            </tr>
             <tr>
-                <td>¿Cuanto stock desea pedir?</td>
+                <td>¿ A Cuanto deseas actualizar el stock asignado en su almacen?</td>
                 <td><input type="number" name="stock"></td>
             </tr>
             <tr>
