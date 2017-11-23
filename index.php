@@ -67,7 +67,9 @@ include_once("config.php");
  
 //fetching data in descending order (lastest entry first)
 //$result = mysql_query("SELECT * FROM users ORDER BY id DESC"); // mysql_query is deprecated
-$result = mysqli_query($mysqli, "SELECT * FROM Personal ORDER BY idPersonal DESC"); // using mysqli_query instead
+$result = mysqli_query($mysqli, "SELECT * FROM Personal ORDER BY idPersonal DESC"); 
+$resultStock = mysqli_query($mysqli, "select p.idProducto, p.nom_prod, pa.Stock, pa.Stock_asignado from Producto p, Producto_Almacen pa where p.idProducto=pa.idProducto"); 
+// using mysqli_query instead
 ?>
  
 <html>
@@ -104,24 +106,33 @@ $result = mysqli_query($mysqli, "SELECT * FROM Personal ORDER BY idPersonal DESC
         }
         ?>
     </table>
+
+    <a href="agregar_producto.html">Agregar nuevo producto aquí.</a><br/><br/>
+    <h4>Stock de Productos: </h4>
+    <table width='80%' border=0>
+        <tr bgcolor='#CCCCCC'>
+            <td>idProducto</td>
+            <td>nom_prod</td>
+            <td>Stock</td>
+            <td>Stock_asignado</td>
+        </tr>
+        <?php 
+        //while($res = mysql_fetch_array($result)) { // mysql_fetch_array is deprecated, we need to use mysqli_fetch_array 
+        while($res = mysqli_fetch_array($result)) {         
+            echo "<tr>";
+            echo "<td>".$res['idProducto']."</td>";
+            echo "<td>".$res['nom_prod']."</td>";
+            echo "<td>".$res['Stock']."</td>";
+            echo "<td>".$res['Stock_asignado']."</td>";
+  
+            echo "<td><a href=\"pedir_stock.php?idProducto=$res[idProducto]\">Pedir Stock</a> | <a href=\"actualizar_stock.php?idProducto=$res[idProducto]\">Eliminar</a></td>";        
+        }
+        ?>
+    </table>
 </body>
 </html>
-
-      
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<footer class="container-fluid">
-  <p>Wiener 2017</p>
-</footer>
-
-</body>
-</html>
-
+     
+       
           </div>
         </div>
       </div>
