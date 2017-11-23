@@ -63,7 +63,7 @@
 
 <html>
 <head>
-    <title>Agregar Empleado al Almacen</title>
+    <title>Contrato de nuevo Personal</title>
 </head>
  
 <body>
