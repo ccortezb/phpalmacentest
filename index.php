@@ -106,7 +106,8 @@ $resultStock = mysqli_query($mysqli, "select p.idProducto, p.nom_prod, pa.Stock,
         }
         ?>
     </table>
-
+    <br>
+    
     <a href="agregar_producto.html">Agregar nuevo producto aquí.</a><br/><br/>
     <h4>Stock de Productos: </h4>
     <table width='80%' border=0>
